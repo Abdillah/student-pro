@@ -1,0 +1,23 @@
+{
+  "name": "creativitae-protoui",
+  "description": "Creativitae UI for Hackathon 2016",
+  "main": "index.js",
+  "authors": [
+    "Hernawan Fa'iz Abdillah"
+  ],
+  "license": "Apache-2.0",
+  "keywords": [
+    "creativitae",
+    "cv",
+    "hackathon"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
