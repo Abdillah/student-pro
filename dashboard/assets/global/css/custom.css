@@ -12,8 +12,8 @@
 }
 
 .cus-buku{
-	height: 210px;
-	width: 180px;
+	height: 180px;
+	width: 150px;
 	margin-top: 15px;
 }
 
@@ -36,7 +36,7 @@
 }
 .hobi-img{
 	height: 88px;
-	width: 118px;
+	width: 108px;
 }
 .hobi-row{
 	margin-top: 35px;
@@ -46,3 +46,31 @@
 .user-stats{
 	margin-top: 35px;
 }
+
+/*login*/
+
+.centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+.login-img{
+	width: 120px;
+	top: 10%;
+	left: 50%;
+	position: fixed;
+	transform: translate(-50%, -50%);
+}
+.login-kotak{
+	width: 380px;
+	height: 430px;
+	background-color: green;
+}
+
+
+
+
+
+
