@@ -320,16 +320,12 @@ var Dashboard = function() {
                 $('#site_activities_content').show();
 
                 var data1 = [
-                    ['DEC', 300],
-                    ['JAN', 600],
-                    ['FEB', 1100],
-                    ['MAR', 1200],
-                    ['APR', 860],
-                    ['MAY', 1200],
-                    ['JUN', 1450],
-                    ['JUL', 1800],
-                    ['AUG', 1200],
-                    ['SEP', 600]
+                    ['Semester 1', 19],
+                    ['Semester 2', 24],
+                    ['Semester 3', 24],
+                    ['Semester 4', 24],
+                    ['Semester 5', 21],
+                    ['Semester 6', 22]
                 ];
 
 
@@ -407,7 +403,7 @@ var Dashboard = function() {
                             $("#tooltip").remove();
                             var x = item.datapoint[0].toFixed(2),
                                 y = item.datapoint[1].toFixed(2);
-                            showChartTooltip(item.pageX, item.pageY, item.datapoint[0], item.datapoint[1] + 'M$');
+                            showChartTooltip(item.pageX, item.pageY, item.datapoint[0], item.datapoint[1] + ' SKS');
                         }
                     }
                 });
@@ -1170,7 +1166,9 @@ var Dashboard = function() {
                 "addClassNames": true,
                 "theme": "light",
                 "path": "../assets/global/plugins/amcharts/ammap/images/",
-                "autoMargins": false,
+                "autoMargins": true,
+                "max":4,
+                "min":1,
                 "marginLeft": 30,
                 "marginRight": 8,
                 "marginTop": 10,
@@ -1183,29 +1181,29 @@ var Dashboard = function() {
                 },
 
                 "dataProvider": [{
-                    "year": 2009,
-                    "income": 23.5,
-                    "expenses": 21.1
+                    "year": "Semester 1",
+                    "income": 3.1,
+                    "expenses": 3.3,
                 }, {
-                    "year": 2010,
-                    "income": 26.2,
-                    "expenses": 30.5
+                    "year": "Semester 2",
+                    "income": 3.25,
+                    "expenses": 3.35,
                 }, {
-                    "year": 2011,
-                    "income": 30.1,
-                    "expenses": 34.9
+                    "year": "Semester 3",
+                    "income": 3.67,
+                    "expenses": 3.5,
                 }, {
-                    "year": 2012,
-                    "income": 29.5,
-                    "expenses": 31.1
+                    "year": "Semester 4",
+                    "income": 3.55,
+                    "expenses": 3.6,
                 }, {
-                    "year": 2013,
-                    "income": 30.6,
-                    "expenses": 28.2,
+                    "year": "Semester 5",
+                    "income": 3.45,
+                    "expenses": 3.65,
                 }, {
-                    "year": 2014,
-                    "income": 34.1,
-                    "expenses": 32.9,
+                    "year": "Semester 6",
+                    "income": 3.7,
+                    "expenses": 3.7,
                     "dashLengthColumn": 5,
                     "alpha": 0.2,
                     "additional": "(projection)"
@@ -1219,7 +1217,7 @@ var Dashboard = function() {
                     "alphaField": "alpha",
                     "balloonText": "<span style='font-size:12px;'>[[title]] in [[category]]:<br><span style='font-size:20px;'>[[value]]</span> [[additional]]</span>",
                     "fillAlphas": 1,
-                    "title": "Income",
+                    "title": "IP",
                     "type": "column",
                     "valueField": "income",
                     "dashLengthField": "dashLengthColumn"
@@ -1235,7 +1233,7 @@ var Dashboard = function() {
                     "bulletBorderThickness": 3,
                     "fillAlphas": 0,
                     "lineAlpha": 1,
-                    "title": "Expenses",
+                    "title": "Target IP",
                     "valueField": "expenses"
                 }],
                 "categoryField": "year",
