@@ -94,4 +94,7 @@ input.input-underline.focus {
 .text-center{
 	text-align: center;
 }
-
+.btn-metronic{
+	border-radius: 8px !important;
+	background-color: #17C4BB !important;
+}
