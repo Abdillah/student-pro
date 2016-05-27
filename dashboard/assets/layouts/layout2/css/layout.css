@@ -1254,7 +1254,7 @@ Page content
     .page-content-wrapper .page-content {
       margin-left: 195px;
       margin-top: 0px;
-      min-height: 600px;
+      min-height: 900px;
       padding: 25px 20px 10px 20px; }
       .page-content-wrapper .page-content.no-min-height {
         min-height: auto; }
