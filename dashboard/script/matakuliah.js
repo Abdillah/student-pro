@@ -39,11 +39,15 @@ var courses = new (Backbone.Collection.extend({
         Event.trigger('courses:loaded');
         console.log('[EVENT] courses:loaded');
     },
-}))([]);
+}))(dummyCourse);
+
+var filteredCourses = new (Backbone.Collection.extend({
+    model: Course,
+}))(dummyCourse);
 
 var courseList = new (Backbone.View.extend({
     el: '.course-list',
-    collection: courses,
+    collection: filteredCourses,
     events: {
         'click .course-item': 'toggleDetail'
     },
@@ -53,10 +57,17 @@ var courseList = new (Backbone.View.extend({
             this.render();
         }, this);
 
+        var sourceCourses = courses;
         Event.on('passion:filter', function(text) {
-            console.log('[EVENT] on passion:filter');
-            this.collection.url = apiurl + 'courses/skill/' + text;
-            this.collection.fetch();
+            text = text.toLowerCase()
+                .replace(' ', '-');
+            var filteredCoursesArr = sourceCourses.filter(function(course, list, a) {
+              console.log('course', course, list, a);
+              return (course.toJSON()['passions'].indexOf(text) != -1);
+            });
+            console.log('[EVENT] on passion:filter ', filteredCoursesArr);
+            this.collection.reset(filteredCoursesArr);
+            this.collection.trigger('sync');
         }, this);
 
         Event.on('courses:loaded', function() {
