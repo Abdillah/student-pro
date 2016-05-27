@@ -69,8 +69,29 @@
 	background-color: green;
 }
 
-
-
-
-
+/*input matakuliah*/
+input.input-underline{
+ 	/*top: 50%;*/
+	left: 55%;
+	position: fixed;
+	transform: translate(-50%, -50%);
+	width: 850px;
+	margin-top: 50px;
+}
+input.input-underline:focus,
+input.input-underline.focus {
+  
+}
+.matakuliah-row{
+	height: 500px;
+}
+.matakuliah-header{
+	height: 3px;
+}
+.big-search{
+	font-size: 15px;
+}
+.text-center{
+	text-align: center;
+}
 
