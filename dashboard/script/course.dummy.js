@@ -7,7 +7,7 @@ var dummyCourse = [
     'schedule': 'Kamis, 13.00',
     'location': 'DSDI',
     'score': 'A',
-    'passions': ['programming', 'data analis'],
+    'passions': ['programming', 'data-analis'],
     'weight': {
       'web-programmer': 0,
       'security-engineer': 0,
@@ -24,7 +24,7 @@ var dummyCourse = [
     'schedule': 'Kamis, 13.00',
     'location': 'DSDI',
     'score': 'B',
-    'passions': ['programming', 'data analis'],
+    'passions': ['programming', 'data-analis'],
     'weight': {
       'web-programmer': 0,
       'security-engineer': 0,
@@ -41,7 +41,7 @@ var dummyCourse = [
     'schedule': 'Kamis, 13.00',
     'location': 'DSDI',
     'score': 'A',
-    'passions': ['programming', 'data analis'],
+    'passions': ['programming', 'data-analis'],
     'weight': {
       'web-programmer': 0,
       'security-engineer': 0,
@@ -58,7 +58,7 @@ var dummyCourse = [
     'schedule': 'Kamis, 13.00',
     'location': 'DSDI',
     'score': 'C',
-    'passions': ['programming', 'data analis'],
+    'passions': ['programming', 'data-analis'],
     'weight': {
       'web-programmer': 1,
       'security-engineer': 0,
