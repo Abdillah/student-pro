@@ -511,8 +511,27 @@ License: You must have a valid license purchased only from themeforest(the above
                           <h3 id="profesion-suggest">...</h3>
                         </div>
                         <div class="col-xs-2 text-right">
-                          <a href="pekerjaan-list.html" class="btn-lg btn-primary btn-metronic">Telusuri</a>
+                          <a data-toggle="modal" data-target="#job-list" class="btn-lg btn-primary btn-metronic">Telusuri</a>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="job-list" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">Daftar Lowongan Pekerjaan</h4>
+                        </div>
+                        <div class="modal-body job-vacancy-list">
+                          <!-- Jobs list -->
+                        </div>
+                        <!-- <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Rekomendasi ke Teman</button>
+                        </div> -->
                       </div>
                     </div>
                   </div>
@@ -1192,6 +1211,18 @@ License: You must have a valid license purchased only from themeforest(the above
           margin: 0;
           padding: 10px;
         }
+
+        .boxed {
+          border: 1px solid rgba(220, 220, 220, 0.5);;
+          background-color: #fff;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        .boxed:hover {
+          background-color: #eee;
+        }
+
         </style>
 
         <script id="tpl-course-list" type="text/template">
@@ -1213,11 +1244,25 @@ License: You must have a valid license purchased only from themeforest(the above
             </li>
         </script>
 
+        <script id="tpl-job-list" type="text/template">
+          <div class="row" data-id="<%= id %>">
+            <div class="col-xs-12 boxed">
+              <div class="col-xs-12"><h4 style="display: inline-block;"><%= position %></h4> di <%= company %></div>
+              <div class="col-xs-12"><strong>Deskripsi</strong></div>
+              <div class="col-xs-12"><%= description %></div>
+              <div class="col-xs-12"><strong>Requirement</strong></div>
+              <div class="col-xs-12"><%= requirement %></div>
+            </div>
+          </div>
+          <br/>
+        </script>
+
         <script src="library/jquery/dist/jquery.js" type="text/javascript"></script>
         <script src="library/bootstrap/dist/js/bootstrap.js" type="text/javascript"></script>
         <script src="library/underscore/underscore.js" type="text/javascript"></script>
         <script src="library/backbone/backbone.js" type="text/javascript"></script>
         <script src="script/course.dummy.js" type="text/javascript"></script>
+        <script src="script/job.dummy.js" type="text/javascript"></script>
         <script src="script/pekerjaan.js"></script>
     </body>
 

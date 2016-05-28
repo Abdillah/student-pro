@@ -222,6 +222,46 @@ var courseList = new (Backbone.View.extend({
     },
 }))();
 
+var Job = Backbone.Model.extend({
+  defaults: {
+    'name': ''
+  }
+});
+
+var jobs = new (Backbone.Collection.extend({
+    model: Job,
+}))(dummyJob);
+
+var jobList = new (Backbone.View.extend({
+    el: '.job-vacancy-list',
+    collection: jobs,
+
+    initialize: function() {
+        this.render();
+
+        Event.on('job-selected', function() {
+          this.render();
+        }, this);
+    },
+    render: function() {
+        var tmpl = _.template($('#tpl-job-list').text());
+
+        this.$el.html('');
+        var jobs = this.collection.toJSON();
+        for (var i = 0; i < jobs.length; i++) {
+            var job = jobs[i];
+            var profesion = job['profesion'];
+            var recommendType = localStorage.getItem('career-recommendation');
+            console.log('Job: ', job, profesion, recommendType, (profesion == recommendType));
+            if (profesion == recommendType) {
+                var view = tmpl(job);
+                // console.log('Course: ', jobs[i], view);
+                this.$el.append(view);
+            }
+        }
+    },
+}))();
+
 $('input.course-check[type=checkbox]').on('change', function(ev) {
   console.log('Checkbox change');
   window.profesion = {
@@ -263,5 +303,15 @@ $('input.course-check[type=checkbox]').on('change', function(ev) {
     }
   }
 
-  $('#profesion-suggest').text(biggest);
+  localStorage.setItem('career-recommendation', biggest);
+
+  function toCamelCase(str) {
+    return str.split(' ').map(function(word){
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
+  }
+
+  Event.trigger('job-selected', biggest);
+
+  $('#profesion-suggest').text(toCamelCase(biggest.replace('-', ' ')));
 });
