@@ -14,13 +14,13 @@
 
 .cus-buku{
 	height: 180px;
-	width: 150px;
 	margin-top: 15px;
 }
 
 .kotak-custom{
 	height: 255px;
 	width: 195px;
+	text-align: center;
 }
 .row-buku{
 	padding: 0 7px 0 7px;
@@ -91,13 +91,14 @@ input.input-underline{
 }
 input.input-underline:focus,
 input.input-underline.focus {
-  
+
 }
 .matakuliah-row{
 	height: 500px;
 }
-.matakuliah-header{
-	height: 3px;
+.matakuliah-header,
+.buku-header {
+	min-height: 3px;
 }
 .big-search{
 	font-size: 15px;
@@ -105,6 +106,7 @@ input.input-underline.focus {
 .text-center{
 	text-align: center;
 }
+
 .btn-metronic{
 	border-radius: 8px !important;
 	background-color: #17C4BB !important;
