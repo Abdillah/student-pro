@@ -69,6 +69,16 @@
 	height: 430px;
 	background-color: green;
 }
+.login-logo{
+	width: 180px;
+}
+.login-logo-ugm{
+	width: 100px;
+}
+.logo-student{
+	width: 130px;
+	margin-top: -5px !important;
+}
 
 /*input matakuliah*/
 input.input-underline{
@@ -98,4 +108,11 @@ input.input-underline.focus {
 .btn-metronic{
 	border-radius: 8px !important;
 	background-color: #17C4BB !important;
+}
+
+
+
+/*pekerjaan*/
+input[type="checkbox"], input[type="radio"]{
+	margin: 4px 0 0 35px !important;
 }

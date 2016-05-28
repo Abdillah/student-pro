@@ -3,15 +3,107 @@
     <head>
         <meta charset="utf-8" />
         <!-- custom -->
-        <link href="assets/global/css/custom.css" rel="stylesheet" type="text/css" />
+        <!-- <link href="assets/global/css/custom.css" rel="stylesheet" type="text/css" /> -->
+        <style>
+        body {
+            background: url("assets/global/img/buku/bg.jpg") !important;
+            background-size: 100% !important;
+            background-position: center !important;
+        }
+        	body > .grid {
+        	  height: 100%;
+        	}
+        	.image {
+        	  margin-top: -100px;
+        	}
+        	.column {
+        	  max-width: 450px;
+        	}
+        </style>
+        <link rel="stylesheet" href="assets/global/css/custom.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.8/semantic.min.js"></script>
     </head>
 <body>
-	<div class="centered">
-		<div class="login-kotak">
-		<img class="login-img" src="assets/global/img/hobi/studentpro.png" alt="">
-		<input type="text">
-		<input type="text">
-		</div>
+	<div class="ui middle aligned center aligned grid">
+	  <div class="column">
+	    <h2 class="ui image header">
+	      <div class="content">
+	        <img class="login-logo" src="assets/global/img/buku/logo.png" alt="">
+	      </div>
+	    </h2>
+	    <form action="#" method="get" class="ui large form">
+	      <div class="ui stacked secondary  segment">
+	        <div class="field">
+	          <div class="ui left icon input">
+	            <i class="user icon"></i>
+	            <input type="text" name="email" placeholder="E-mail">
+	          </div>
+	        </div>
+	        <div class="field">
+	          <div class="ui left icon input">
+	            <i class="lock icon"></i>
+	            <input type="password" name="password" placeholder="Password">
+	          </div>
+	        </div>
+	        <div class="ui fluid large teal submit button">Login</div>
+	      </div>
+
+	      <div class="ui error message"></div>
+
+	    </form>
+
+	    <div class="ui message">
+	      Lupa Password? <a href="#">Hubungi Kami</a>
+	    </div>
+	    <h2 class="ui image header">
+	      <div class="content">
+	        <img class="login-logo-ugm" src="assets/global/img/buku/ugm.png" alt="">
+	      </div>
+	    </h2>
+	  </div>
 	</div>
+
+	
+	<script>
+		$(document)
+		  .ready(function() {
+		    $('.ui.form')
+		      .form({
+		        fields: {
+		          email: {
+		            identifier  : 'email',
+		            rules: [
+		              {
+		                type   : 'empty',
+		                prompt : 'Please enter your e-mail'
+		              },
+		              {
+		                type   : 'email',
+		                prompt : 'Please enter a valid e-mail'
+		              }
+		            ]
+		          },
+		          password: {
+		            identifier  : 'password',
+		            rules: [
+		              {
+		                type   : 'empty',
+		                prompt : 'Please enter your password'
+		              },
+		              {
+		                type   : 'length[6]',
+		                prompt : 'Your password must be at least 6 characters'
+		              }
+		            ]
+		          }
+		        }
+		      })
+		    ;
+		  })
+		;
+	</script>
+
+
 </body>
 </html>
